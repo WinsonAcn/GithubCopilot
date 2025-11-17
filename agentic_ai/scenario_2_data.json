@@ -1,0 +1,102 @@
+{
+  "name": "Task Planning Workflow",
+  "nodes": [
+    {
+      "id": "dfd13ad9-575b-4c54-9474-1179a93fde9d",
+      "name": "Planner",
+      "type": "agent",
+      "data": {
+        "role": "Task Planning and Prioritization",
+        "tool_count": 2,
+        "message_count": 0
+      },
+      "metadata": {
+        "state_id": "dfd13ad9-575b-4c54-9474-1179a93fde9d",
+        "role": "Task Planning and Prioritization"
+      }
+    },
+    {
+      "id": "78a53004-f6ac-4815-934b-c2a3c72cdd18",
+      "name": "Executor",
+      "type": "agent",
+      "data": {
+        "role": "Task Execution and Calculation",
+        "tool_count": 2,
+        "message_count": 0
+      },
+      "metadata": {
+        "state_id": "78a53004-f6ac-4815-934b-c2a3c72cdd18",
+        "role": "Task Execution and Calculation"
+      }
+    },
+    {
+      "id": "1d3edde5-ab1c-4d3d-b1ff-c128329c8a47",
+      "name": "Coordinator",
+      "type": "agent",
+      "data": {
+        "role": "Inter-Agent Coordination",
+        "tool_count": 0,
+        "message_count": 0
+      },
+      "metadata": {
+        "state_id": "1d3edde5-ab1c-4d3d-b1ff-c128329c8a47",
+        "role": "Inter-Agent Coordination"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "1d3edde5-ab1c-4d3d-b1ff-c128329c8a47",
+      "target": "dfd13ad9-575b-4c54-9474-1179a93fde9d",
+      "type": "communication",
+      "weight": 1.0,
+      "data": {
+        "message_type": "query",
+        "message_id": "fd28cf78-6b19-4049-a9a1-739b4bed973d",
+        "content_preview": "Break down the data processing project"
+      }
+    },
+    {
+      "source": "1d3edde5-ab1c-4d3d-b1ff-c128329c8a47",
+      "target": "78a53004-f6ac-4815-934b-c2a3c72cdd18",
+      "type": "communication",
+      "weight": 1.0,
+      "data": {
+        "message_type": "query",
+        "message_id": "36644ce9-5e7f-4963-ac8f-bc902cbb612d",
+        "content_preview": "Calculate financial metrics"
+      }
+    },
+    {
+      "source": "dfd13ad9-575b-4c54-9474-1179a93fde9d",
+      "target": "1d3edde5-ab1c-4d3d-b1ff-c128329c8a47",
+      "type": "communication",
+      "weight": 1.0,
+      "data": {
+        "message_type": "response",
+        "message_id": "b304b4ca-72fe-4863-a1e8-cc9211dc9976",
+        "content_preview": "Planning complete"
+      }
+    },
+    {
+      "source": "78a53004-f6ac-4815-934b-c2a3c72cdd18",
+      "target": "1d3edde5-ab1c-4d3d-b1ff-c128329c8a47",
+      "type": "communication",
+      "weight": 1.0,
+      "data": {
+        "message_type": "response",
+        "message_id": "e28fbb83-6360-43af-91be-de4e38e65903",
+        "content_preview": "Execution complete"
+      }
+    }
+  ],
+  "statistics": {
+    "total_nodes": 3,
+    "total_edges": 4,
+    "agents": 3,
+    "tasks": 0,
+    "tools": 0,
+    "density": 0.6666666666666666,
+    "message_flows": 4
+  }
+}

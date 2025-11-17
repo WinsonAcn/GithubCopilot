@@ -1,0 +1,102 @@
+{
+  "name": "Knowledge Coordination Workflow",
+  "nodes": [
+    {
+      "id": "9bb44f13-d7bd-46fa-b131-4eb33c5aed6d",
+      "name": "Knowledge",
+      "type": "agent",
+      "data": {
+        "role": "Information Management",
+        "tool_count": 2,
+        "message_count": 0
+      },
+      "metadata": {
+        "state_id": "9bb44f13-d7bd-46fa-b131-4eb33c5aed6d",
+        "role": "Information Management"
+      }
+    },
+    {
+      "id": "dfd19232-77dc-4b92-81bd-2eb6ff0fa75d",
+      "name": "Analyzer",
+      "type": "agent",
+      "data": {
+        "role": "Data Analysis and Pattern Detection",
+        "tool_count": 3,
+        "message_count": 0
+      },
+      "metadata": {
+        "state_id": "dfd19232-77dc-4b92-81bd-2eb6ff0fa75d",
+        "role": "Data Analysis and Pattern Detection"
+      }
+    },
+    {
+      "id": "41978ef9-eacf-46fc-a71e-b96466404a9b",
+      "name": "Planner",
+      "type": "agent",
+      "data": {
+        "role": "Task Planning and Prioritization",
+        "tool_count": 2,
+        "message_count": 0
+      },
+      "metadata": {
+        "state_id": "41978ef9-eacf-46fc-a71e-b96466404a9b",
+        "role": "Task Planning and Prioritization"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "dfd19232-77dc-4b92-81bd-2eb6ff0fa75d",
+      "target": "9bb44f13-d7bd-46fa-b131-4eb33c5aed6d",
+      "type": "communication",
+      "weight": 1.0,
+      "data": {
+        "message_type": "query",
+        "message_id": "024e83c4-c3f7-4abf-b66b-ab0ee6254ff8",
+        "content_preview": "Search for multiagent information"
+      }
+    },
+    {
+      "source": "41978ef9-eacf-46fc-a71e-b96466404a9b",
+      "target": "dfd19232-77dc-4b92-81bd-2eb6ff0fa75d",
+      "type": "communication",
+      "weight": 1.0,
+      "data": {
+        "message_type": "query",
+        "message_id": "9109787e-0cb4-4758-a61b-7fbfe462d9a5",
+        "content_preview": "Analyze workflow patterns"
+      }
+    },
+    {
+      "source": "9bb44f13-d7bd-46fa-b131-4eb33c5aed6d",
+      "target": "dfd19232-77dc-4b92-81bd-2eb6ff0fa75d",
+      "type": "communication",
+      "weight": 1.0,
+      "data": {
+        "message_type": "response",
+        "message_id": "94f002db-5096-4dad-b361-5ed67055d373",
+        "content_preview": "Query processed"
+      }
+    },
+    {
+      "source": "dfd19232-77dc-4b92-81bd-2eb6ff0fa75d",
+      "target": "41978ef9-eacf-46fc-a71e-b96466404a9b",
+      "type": "communication",
+      "weight": 1.0,
+      "data": {
+        "message_type": "response",
+        "message_id": "84f3b8dc-710e-492a-acb6-c7bde039f9ea",
+        "content_preview": "Analysis complete"
+      }
+    }
+  ],
+  "statistics": {
+    "total_nodes": 3,
+    "total_edges": 4,
+    "agents": 3,
+    "tasks": 0,
+    "tools": 0,
+    "density": 0.6666666666666666,
+    "message_flows": 4
+  }
+}

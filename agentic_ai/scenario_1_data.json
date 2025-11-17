@@ -1,0 +1,66 @@
+{
+  "name": "Data Analysis Workflow",
+  "nodes": [
+    {
+      "id": "48b5d2a9-165c-44e0-ab81-dd9a99e6dcde",
+      "name": "Analyzer",
+      "type": "agent",
+      "data": {
+        "role": "Data Analysis and Pattern Detection",
+        "tool_count": 3,
+        "message_count": 0
+      },
+      "metadata": {
+        "state_id": "48b5d2a9-165c-44e0-ab81-dd9a99e6dcde",
+        "role": "Data Analysis and Pattern Detection"
+      }
+    },
+    {
+      "id": "70c695c8-be07-426f-9818-8ef23421a830",
+      "name": "Coordinator",
+      "type": "agent",
+      "data": {
+        "role": "Inter-Agent Coordination",
+        "tool_count": 0,
+        "message_count": 0
+      },
+      "metadata": {
+        "state_id": "70c695c8-be07-426f-9818-8ef23421a830",
+        "role": "Inter-Agent Coordination"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "70c695c8-be07-426f-9818-8ef23421a830",
+      "target": "48b5d2a9-165c-44e0-ab81-dd9a99e6dcde",
+      "type": "communication",
+      "weight": 1.0,
+      "data": {
+        "message_type": "query",
+        "message_id": "81ee9430-92f0-4259-b244-4003450d7183",
+        "content_preview": "Analyze the following dataset"
+      }
+    },
+    {
+      "source": "48b5d2a9-165c-44e0-ab81-dd9a99e6dcde",
+      "target": "70c695c8-be07-426f-9818-8ef23421a830",
+      "type": "communication",
+      "weight": 1.0,
+      "data": {
+        "message_type": "response",
+        "message_id": "939b1b52-d5af-44d7-8688-d248827dd76b",
+        "content_preview": "Analysis complete"
+      }
+    }
+  ],
+  "statistics": {
+    "total_nodes": 2,
+    "total_edges": 2,
+    "agents": 2,
+    "tasks": 0,
+    "tools": 0,
+    "density": 1.0,
+    "message_flows": 2
+  }
+}
